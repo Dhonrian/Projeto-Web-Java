@@ -6,11 +6,14 @@
 	<head>
 		<title> Finalizar Compra </title>
 		<meta charset="utf-8">
+		<link type="text/css" rel="stylesheet" href="static/css/estilos.css"/>
 	</head>
 	<body>
 		<div>
-			<a href="index"> Busca </a>
-			<a href="estoque"> Estoque </a>
+			<ul>
+				<li><a href="home"> Busca </a></li>
+				<li><a href="estoque"> Estoque </a></li>
+			</ul>	
 		</div>
 		
 		<div>

@@ -6,16 +6,19 @@
 	<head>
 		<title> Adicionar Produto </title>
 		<meta charset="utf8"> 
+		<link type="text/css" rel="stylesheet" href="static/css/estilos.css"/>
 	</head>
 	<body>
 		<div>
-			<a href="index"> Busca </a>
-			<a href="estoque"> Estoque </a>
+			<ul>
+				<li><a href="home"> Busca </a></li>
+				<li><a href="estoque"> Estoque </a></li>
+			</ul>	
 		</div>
 
-		<h2> Adicionar Produtos </h2>
+		<h2 style="text-align: center;"> Adicionar Produtos </h2>
 
-		<form id="add_prod" action="" method="get">
+		<form id="add_prod" action="Addprod.action" method="get">
 			<div>
 				<input type="number" name="id" placeholder="id" disabled>
 			</div>
@@ -29,11 +32,14 @@
 				<input type="text" name="unidade" placeholder="Unidade">
 			</div>
 			<div>	
-				<input type="number" name="preco" placeholder="Preço">
+				<input type="number" step=0.01 name="preco" placeholder="Preço">
 			</div>
 			<div>
-				<input type="submit" value="Adicionar">
-				<input type="reset" value="Cancelar" >
+				<input type="text" name="descricao" placeholder="Descrição">
+			</div>
+			<div>
+				<input id="confirmar" type="submit" value="Adicionar">
+				<input id="cancelar" type="reset" value="Cancelar" >
 			</div>
 		</form>
 

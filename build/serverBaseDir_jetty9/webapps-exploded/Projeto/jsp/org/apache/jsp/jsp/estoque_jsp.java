@@ -49,11 +49,11 @@ public final class estoque_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<head>\r\n");
       out.write("\t\t<title> Estoque </title>\r\n");
       out.write("\t\t<meta charset=\"utf-8\"> \r\n");
-      out.write("\t\t<link rel=\"stylesheet\" type=\"text/css\"  href=\"static/css/styles.css\"/>\r\n");
+      out.write("\t\t<link rel=\"stylesheet\" type=\"text/css\"  href=\"static/css/estilos.css\"/>\r\n");
       out.write("\t</head>\t\r\n");
       out.write("\t<body>\r\n");
       out.write("\t\t<div>\r\n");
-      out.write("\t\t\t<a href=\"index\"> Busca </a>\r\n");
+      out.write("\t\t\t<a href=\"home\"> Busca </a>\r\n");
       out.write("\t\t\t<a href=\"estoque\"> Estoque </a>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t\t<h2> Estoque</h2>\r\n");

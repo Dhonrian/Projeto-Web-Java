@@ -50,7 +50,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<head>\r\n");
       out.write("\t\t<title> Vendas </title>\r\n");
       out.write("\t\t<meta charset=\"utf-8\">\r\n");
-      out.write("\t\t<link rel=\"stylesheet\" type=\"text/css\"  href=\"static/css/styles.css\"/>\r\n");
+      out.write("\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n");
+      out.write("\t\t<link  type=\"text/css\" rel=\"stylesheet\" href=\"../resources/css/estilos.css\"/>\r\n");
+      out.write("\r\n");
       out.write("\t</head>\t\r\n");
       out.write("\r\n");
       out.write("\t<body>\r\n");

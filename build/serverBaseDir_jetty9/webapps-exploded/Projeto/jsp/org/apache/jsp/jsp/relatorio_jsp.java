@@ -49,10 +49,12 @@ public final class relatorio_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<head>\r\n");
       out.write("\t\t<title> Relatório </title>\r\n");
       out.write("\t\t<meta charset=\"utf-8\">\r\n");
+      out.write("\t<link type=\"text/css\" rel=\"stylesheet\" href=\"static/css/estilos.css\"/>\r\n");
+      out.write("\r\n");
       out.write("\t</head>\r\n");
       out.write("\t<body>\r\n");
       out.write("\t\t<div>\r\n");
-      out.write("\t\t\t<a href=\"index\"> Busca </a>\r\n");
+      out.write("\t\t\t<a href=\"home\"> Busca </a>\r\n");
       out.write("\t\t\t<a href=\"estoque\"> Estoque </a>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\r\n");

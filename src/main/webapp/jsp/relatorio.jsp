@@ -1,16 +1,22 @@
 <%@ taglib uri ="http://java.sun.com/jsp/jstl/core" prefix = "c"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import ="model.Produto"%>
+<%@page import ="java.util.List"%>
 
 <!DOCTYPE html>
 <html>
 	<head>
 		<title> Relatório </title>
 		<meta charset="utf-8">
+	<link type="text/css" rel="stylesheet" href="static/css/estilos.css"/>
+
 	</head>
 	<body>
 		<div>
-			<a href="index"> Busca </a>
-			<a href="estoque"> Estoque </a>
+			<ul>
+				<li><a href="home"> Busca </a></li>
+				<li><a href="estoque"> Estoque </a></li>
+			</ul>	
 		</div>
 
 		<div> 
@@ -23,34 +29,38 @@
 					<th>ID</th>
 					<th>Produto</th>
 					<th>Quantidade</th>
-					<th>Unidade </th>
-					<th> Preço </th>
+					<th>Preço </th>
+					<th>Unidade</th>
 					<th colspan="2">Descrição</th>
-
 				</tr>
-				<tr>
-					<td> 0 </td>
-					<td> Agua  </td>
-					<td> 4 </td>
-					<td> L </td>
-					<td> 2.50 <td>
-					<td> Água mineral pra voce ficar legal </td>	
 
-				</tr>
-				<tr>
-					<td> 1 </td>
-					<td> Chocolate  </td>
-					<td> 4 </td>
-					<td> g </td>
-					<td> 2.00 <td>
-					<td> Cioccolata </td>
-
-				</tr>
+ 			<% 
+ 				List<Produto> produtos = (List)request.getAttribute("produtos");
+                for(Produto p: produtos){
+                	out.print("<tr>");
+                	out.print("<td>" + p.getId() + "</td>");
+                	out.print("<td>" + p.getProdnome() + "</td>");
+                	out.print("<td>" + p.getQuantidade() + "</td>");
+                	out.print("<td>" + p.getPreco() + "</td>");
+                	out.print("<td>" + p.getUnidade() + "</td>");
+                	out.print("<td>" + p.getDescricao() + "</td>");
+                	out.print("</tr>");
+                }%>
 			</table>
 		</div>
 		<div>
-			<b> Preço total: 18.50</b>
-			<b> Total de itens: 8 </b>
+		<%  
+			double valor_total = 0;
+			int qnt = 0;
+			for (Produto p: produtos){
+				valor_total += p.getPreco() * p.getQuantidade();
+				qnt += p.getQuantidade();
+			}
+			out.print("<b> Quantidide de produtos: " + qnt + " - </b>");
+			out.print("<b> Valor Estoque: R$" + valor_total + "</b>");
+
+		%> 
+
 		</div>
 		
 	</body>
