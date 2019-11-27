@@ -24,12 +24,22 @@
 		</div>
 
 		<div>
-			<form id="envio_prod" action="" method="get">
-				<input type="number" name="produto" placeholder="Produto ID"/>
-				<input type="number" name="quantidade"/>
+			<form id="envio_prod" onsubmit="adicionar(event)" method="get">
+				<input id="idProd" type="number" name="produto" placeholder="Produto ID"/>
+				<input id="qntProd" type="number" name="quantidade"/>
 				<input type="submit" value="Adicionar">
 			</form>
 		</div>
+			<table id="carrinho">
+				<tr>
+					<th>ID</th>
+					<th>Produto</th>
+					<th>Quantidade</th>
+					<th>Unidade </th>
+					<th>Preço</th>
+					<th colspan="2">Descrição</th>
+				</tr>
+			</table>
 
 		<div>
 
@@ -39,5 +49,6 @@
 				<input type="submit" name="fechar_compra" value="Finalizacao">
 			</form> 
 		</div>
+		<script src="<%=request.getContextPath()%>/js/Methods.js"></script>
 	</body>
 </html>

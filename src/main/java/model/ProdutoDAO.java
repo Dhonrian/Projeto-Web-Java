@@ -39,4 +39,13 @@ public class ProdutoDAO {
         em.close();
         emf.close();
     }
+
+    public Produto getProduto(long id){
+    	EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistencia_simples");        
+		EntityManager em = emf.createEntityManager();
+		Produto p = em.find(Produto.class, id);
+        em.close();
+        emf.close();
+        return p;
+    }
 }  
