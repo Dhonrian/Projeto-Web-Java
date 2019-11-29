@@ -19,6 +19,16 @@ public class ProdutoDAO {
 	    return produtos;
     }
 
+    public void updateProduto(Produto produto){
+    	EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistencia_simples");        
+		EntityManager em = emf.createEntityManager();
+    	em.getTransaction().begin();
+		em.merge(produto);
+        em.getTransaction().commit();
+        em.close();
+        emf.close();
+    }
+
     public void addProduto(Produto produto){
     	EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistencia_simples");        
 		EntityManager em = emf.createEntityManager();

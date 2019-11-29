@@ -8,6 +8,7 @@
 		<title> Vendas </title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/> 
 		<link rel="stylesheet" href="<%=request.getContextPath()%>/static/css/estilos.css">
 	</head>	
 
@@ -20,17 +21,17 @@
 		</div>
 		
 		<div>
-			<h2> Busca </h2>	
+			<h2 class="title is-2"> Busca </h2>	
 		</div>
 
 		<div>
 			<form id="envio_prod" onsubmit="adicionar(event)" method="get">
 				<input id="idProd" type="number" name="produto" placeholder="Produto ID"/>
-				<input id="qntProd" type="number" name="quantidade"/>
+				<input id="qntProd" type="number" name="quantidade" required/>
 				<input type="submit" value="Adicionar">
 			</form>
 		</div>
-			<table id="carrinho">
+			<table class="tabelaEstoque" id="carrinho">
 				<tr>
 					<th>ID</th>
 					<th>Produto</th>

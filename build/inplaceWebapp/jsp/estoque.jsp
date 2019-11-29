@@ -8,6 +8,7 @@
 	<head>
 		<title> Estoque </title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/> 
 		<link rel="stylesheet"  href="static/css/estilos.css"/>
 	</head>		
 	<body>
@@ -17,10 +18,10 @@
 				<li><a href="estoque"> Estoque </a></li>
 			</ul>	
 		</div>
-			<h2> Estoque</h2>
+			<h2 class="title is-2"> Estoque </h2>
 			<a href="relatorio"> Gerar relatório </a>	
 		<div>
-			<table>
+			<table class="tabelaEstoque">
 				<tr>
 					<th>ID</th>
 					<th>Produto</th>
@@ -40,7 +41,7 @@
                 	out.print("<td>" + p.getPreco() + "</td>");
                 	out.print("<td>" + p.getUnidade() + "</td>");
                 	out.print("<td>" + p.getDescricao() + "</td>");
-                	out.print("<td> <button id='editar'  value='editar'> Editar </button> </td>");
+                	out.print("<td> <button id='editar' onclick=openModal('modalId',"+p.getId()+") value='editar'> Editar </button> </td>");
                 	out.print("<td> <button id='remover' onclick=remover("+p.getId()+") value='remover'> X </button> </td>");
                 	out.print("</tr>");
                 }%>
@@ -51,12 +52,41 @@
 			<button id="addProd" onclick="window.location.href = 'AddProduto';">Adicionar Produto</button>
 		</div>
 
-	<script type="text/javascript">
-		function remover(id){
-			console.log('Remover?id='+ id)
-			window.location.href = 'Remover?id='+ id;
-		}
-	</script> 
+
+	<div id="modalId" class="modal">
+		<div class="modal-background"></div>
+		<div class="modal-card">
+    		<header class="modal-card-head">
+      			<p class="modal-card-title">Editar</p>
+      			<button class="delete" onclick="closeModal('modalId')" aria-label="close"></button>
+    		</header>
+    		<section class="modal-card-body">
+    			<div class="field">
+    				<div class="control">
+    					<form action="Update.action" method="get">
+							<label class="label">ID</label>
+							<input id="prodId" class="input" type="number" name="id"  readonly>
+							<label class="label">Produto</label>
+							<input id="prodNome" class="input" type="text" name="produto">
+							<label class="label">Quantidade</label>
+							<input id="quantidade" class="input" type="number" name="quantidade">
+							<label class="label">Unidade</label>
+							<input id="unidade" class="input" type="text" name="unidade">
+							<label class="label">Preço</label>
+							<input id="preco" class="input" type="number" step=0.01 name="preco">
+							<label class="label">Descrição</label>
+							<input id="desc" class="input" type="text" name="descricao">
+					</div>
+				</div>
+    		</section>
+    		<footer class="modal-card-foot">
+    			<input type="submit" class="button is-success" value="Atualizar">
+      			<button class="button is-danger">Cancelar</button>
+				</form>
+    		</footer>
+	 		</div>
+	</div>
+	<script src="<%=request.getContextPath()%>/js/Methods.js"></script> 
 	</body>
 </html>
 

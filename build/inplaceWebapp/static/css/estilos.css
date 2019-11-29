@@ -1,19 +1,19 @@
-table {
+.tabelaEstoque  {
   border-collapse: collapse;
   background-color:  white;
   width: 100%;
 }
 
-th, td {
-  text-align: left;
-  padding: 8px;
+.tabelaEstoque th, td {
+  text-align: right;
+  padding: 10px;
 }
 
-b {
+.tabelaEstoque b {
 	font-size: 20px;
 }
 
-tr:nth-child(even) {background-color: #f2f2f2;}
+.tabelaEstoque tr:nth-child(even) {background-color: #f2f2f2;}
 
 #add_prod{
 	max-width: 500px;
