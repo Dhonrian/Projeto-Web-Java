@@ -58,4 +58,8 @@ public class ProdutoDAO {
         emf.close();
         return p;
     }
+
+    public void compra(){
+    	
+    }
 }  

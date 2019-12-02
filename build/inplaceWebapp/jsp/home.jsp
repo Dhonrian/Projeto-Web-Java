@@ -43,12 +43,12 @@
 			</table>
 
 		<div>
-
+			<b id="ttlProdutos"></b>
+			<b id="ttlCarrinho"></b>
 		</div>
 		<div>
-			<form id="Fechar_Compra" action="Finalizacao" method="post">
-				<input type="submit" name="fechar_compra" value="Finalizacao">
-			</form> 
+			<form id="form" action="Comprar" method="post"></form>
+			<button onclick="comprar()">Comprar</button> 
 		</div>
 		<script src="<%=request.getContextPath()%>/js/Methods.js"></script>
 	</body>

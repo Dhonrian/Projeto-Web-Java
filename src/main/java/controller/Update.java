@@ -24,8 +24,6 @@ public class Update extends HttpServlet {
 						HttpServletResponse res){
 
 
-
-
 		try{
 
 			System.out.println(req.getParameter("id"));
